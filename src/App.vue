@@ -10,7 +10,9 @@ export default {
 </script>
 
 <template>
-  <appMain/>
+  <main>
+    <appMain/>
+  </main>
 </template>
 
 <style lang="scss">

@@ -32,12 +32,18 @@ export default{
 </script>
 
 <template>
-    <div class="container">
-        <div class="" v-for="element in projectList">
-            <p>{{ element.title }}</p>
+    <div class="container d-flex p-3">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3">
+            <div class="card" v-for="element in projectList">
+                <img :src="element.image" class="img-fluid" :alt="element.title">
+                <div class="card-body" >
+                    <h5 class="card-title">{{ element.title }}</h5>
+                    <p class="card-text">{{ element.description.substr(0,150) }}</p>
+                    <a href="#" class="btn btn-primary">view</a>
+                </div>
+            </div>
         </div>
     </div>
-  
 </template>
 
 <style lang="scss" scoped>
