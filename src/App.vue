@@ -1,18 +1,25 @@
 <script>
-import appMain from './components/appMain.vue';
+import AppMain from './components/AppMain.vue';
+import AppHeader from './components/Appheader.vue';
 
 export default {
   name: 'AppVue',
   components: {
-    appMain,
+    AppMain,
+    AppHeader,
   }
 }
 </script>
 
 <template>
+
+  <header>
+    <AppHeader/>
+  </header>
   <main>
-    <appMain/>
+    <AppMain/>
   </main>
+
 </template>
 
 <style lang="scss">
