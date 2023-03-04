@@ -37,12 +37,25 @@ export default{
 </script>
 
 <template>
-    <AppProject v-for="project in projectList" :project="project"/>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>My project</h1> 
+            </div>
+        </div>
+    </div>
+
+    <div class="container d-flex flex-wrap p-3">
+        <div class="row g-3">
+            <AppProject v-for="project in projectList" :project="project"/>     
+        </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
 @use '../styles/general.scss' as * ;
 @use '../styles/partials/variables' as * ;
+
 
 
 </style>
