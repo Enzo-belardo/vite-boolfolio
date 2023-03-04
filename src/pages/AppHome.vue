@@ -10,13 +10,13 @@ export default {
 </script>
 
 <template>
-
- 
-
+  <div>
+    Home page
+  </div>
 </template>
 
 <style lang="scss">
-@use './styles/general.scss' as * ;
+
 
 
 

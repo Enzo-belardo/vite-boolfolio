@@ -1,24 +1,30 @@
 <script>
+import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
-import AppHeader from './components/Appheader.vue';
+import AppFooter from './components/AppFooter.vue';
+
+
 
 export default {
   name: 'AppVue',
   components: {
-    AppMain,
     AppHeader,
+    AppMain,
+    AppFooter
   }
 }
 </script>
 
 <template>
 
-  <header>
-    <AppHeader/>
-  </header>
+  <AppHeader/>
+
   <main>
     <AppMain/>
+    <router-view></router-view>
   </main>
+
+  <AppFooter/>
 
 </template>
 

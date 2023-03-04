@@ -1,4 +1,4 @@
-<script>
+<script >
 
 
 export default {
@@ -10,13 +10,14 @@ export default {
 </script>
 
 <template>
-
- 
-
+<div>
+    About
+</div>
 </template>
 
 <style lang="scss">
-@use './styles/general.scss' as * ;
+
+
 
 
 
