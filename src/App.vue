@@ -16,21 +16,27 @@ export default {
 </script>
 
 <template>
-
-  <AppHeader/>
-
+   <header>
+    <AppHeader/>
+   </header>
+  
   <main>
     <AppMain/>
-    <router-view></router-view>
   </main>
-
-  <AppFooter/>
+   <footer>
+    <AppFooter/>
+   </footer>
 
 </template>
 
 <style lang="scss">
 @use './styles/general.scss' as * ;
+@use './styles/partials/variables' as * ;
 @use "bootstrap/scss/bootstrap" as *;
 
+
+main{
+  background-color: $secondary-color;
+}
 
 </style>
