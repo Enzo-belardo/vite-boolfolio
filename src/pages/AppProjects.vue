@@ -1,61 +1,64 @@
 <script>
-import axios from 'axios';
 import AppProject from '../components/AppProject.vue';
+import axios from 'axios';
 
-export default{
+export default {
+
     name: 'AppProjects',
-    components : {
+    components: {
         AppProject,
-      
     },
     data() {
         return {
-            projectList:[],
-            url: 'http://127.0.0.1:8000/api/projects',
+            projectsList: [],
+            urlAddress: 'http://127.0.0.1:8000/api/projects',
         }
     },
     methods: {
-        getProjects(){
-            axios.get(this.url,{
+        getProjects() {
+            axios.get(this.urlAddress , {
                 params:{
-                   
+
                 }
             })
-            .then((response) => {
-                this.projectList = response.data.results;
-            })
 
+            .then( (response) => {
+                console.log(response.data.results);
+                this.projectsList = response.data.results.data;
+            })
             .catch(function (error) {
                 console.log(error);
             })
+                
         }
     },
     created() {
         this.getProjects();
-    }
+    },
 }
 </script>
 
 <template>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <h1>My project</h1> 
+            <div class="col p-5 text-color">
+                <h1>Welcome to my projects</h1> 
             </div>
         </div>
     </div>
-
-    <div class="container d-flex flex-wrap p-3">
-        <div class="row g-3">
-            <AppProject v-for="project in projectList" :project="project"/>     
-        </div>
+    <div class="container">
+        <div class="row g-4">
+            <AppProject v-for="project in projectsList" :project="project" :isHover="true"/>
+        </div> 
     </div>
 </template>
 
-<style lang="scss" scoped>
-@use '../styles/general.scss' as * ;
+
+<style lang="scss"  scoped>
 @use '../styles/partials/variables' as * ;
 
-
-
+.text-color{
+    color: $primary-color;
+}
+    
 </style>
